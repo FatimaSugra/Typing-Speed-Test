@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Typing Speed Challenge</title>
+
+  <!-- Google Fonts: Game Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a1a40);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #ffffff;
+      padding: 30px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #timer {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 2px dashed #ffffff;
+      color: #00ffcc;
+    }
+
+    textarea {
+      font-family: monospace;
+      font-size: 1rem;
+      margin-top: 10px;
+      background-color: #000000dd;
+      color: #00ffcc;
+      border: 2px solid #00ffcc;
+    }
+
+    #result {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      margin-top: 20px;
+      border: 2px solid #ff00cc;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🎮 Typing Speed Challenge</h2>
+
+    <p id="timer">⏱️ Time Left: 60s</p>
+
+    <div class="card p-3 mb-3">
+      <p id="sentence">
+        The quick brown fox jumps over the lazy dog while programmers silently debug JavaScript code for hours without realizing the semicolon they missed.
+      </p>
+    </div>
+
+    <textarea id="inputBox" class="form-control" rows="4" placeholder="Start typing..." oninput="startTest()" onkeydown="checkEnter(event)"></textarea>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
